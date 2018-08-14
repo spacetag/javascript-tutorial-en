@@ -1,10 +1,10 @@
 # Async/await
 
-There's a special syntax to work with promises in a more comfort fashion, called "async/await". It's surprisingly easy to understand and use.
+There's a special syntax to work with promises in a more comfortable fashion, called "async/await". It's surprisingly easy to understand and use.
 
 ## Async functions
 
-Let's start with the `async` keyword. It can be placed before function, like this:
+Let's start with the `async` keyword. It can be placed before a function, like this:
 
 ```js
 async function f() {
@@ -12,9 +12,9 @@ async function f() {
 }
 ```
 
-The word "async" before a function means one simple thing: a function always returns a promise. If the code has `return <non-promise>` in it, then JavaScript automatically wraps it into a resolved promise with that value.
+The word "async" before a function means one simple thing: that function will always return a promise. If the function has `return <non-promise>` in it, then JavaScript automatically wraps it into a resolved promise with that value.
 
-For instance, the code above returns a resolved promise with the result of `1`, let's test it:
+For instance, the code above returns a resolved promise with the result of `1`. Let's test it:
 
 ```js run
 async function f() {
@@ -24,7 +24,7 @@ async function f() {
 f().then(alert); // 1
 ```
 
-...We could explicitly return a promise, that would be the same:
+We could have also explicitly returned a promise, and the result would have be the same:
 
 ```js run
 async function f() {
@@ -34,7 +34,7 @@ async function f() {
 f().then(alert); // 1
 ```
 
-So, `async` ensures that the function returns a promise, wraps non-promises in it. Simple enough, right? But not only that. There's another keyword `await` that works only inside `async` functions, and it's pretty cool.
+So, `async` ensures that the function returns a promise, and wraps non-promises in it. Simple enough, right? But wait, there's more! There's another keyword called `await` that only works inside `async` functions, and it's pretty cool.
 
 ## Await
 
